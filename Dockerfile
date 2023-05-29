@@ -3,6 +3,7 @@ FROM node:alpine AS development
 WORKDIR /app
 COPY package*.json pnpm-lock.yaml ./
 RUN npm i -g pnpm
+RUN pnpm fetch --prod
 RUN pnpm install --prod
 COPY . ./
 USER node

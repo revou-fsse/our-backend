@@ -1,11 +1,11 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { createApi as unsplashCreateApi } from 'unsplash-js';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { createApi as unsplashCreateApi } from "unsplash-js";
 
-import { CreateTodoDto } from './dto/create-todo.dto';
-import { UpdateTodoDto } from './dto/update-todo.dto';
+import { CreateTodoDto } from "./dto/create-todo.dto";
+import { UpdateTodoDto } from "./dto/update-todo.dto";
 
-import { PrismaService } from 'src/prisma/prisma.service';
-import { createTodoSlug } from 'src/utils/slug';
+import { PrismaService } from "src/prisma/prisma.service";
+import { createTodoSlug } from "src/utils/slug";
 
 const unsplash = unsplashCreateApi({
   accessKey: process.env.UNSPLASH_ACCESS_KEY,
@@ -17,12 +17,6 @@ export class TodosService {
 
   findAll() {
     return this.prisma.todo.findMany({
-      where: {
-        completed: true,
-        completedAt: {
-          lte: new Date(),
-        },
-      },
       include: {
         author: true,
       },
@@ -67,7 +61,7 @@ export class TodosService {
     return this.prisma.todo.create({
       data: {
         ...createTodoDto,
-        imageUrl: randomImageUrl || '',
+        imageUrl: randomImageUrl || "",
         slug: createTodoSlug(createTodoDto.title),
         completedAt: createTodoDto.completed ? new Date() : null,
       },

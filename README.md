@@ -12,7 +12,9 @@ Similar with:
 
 ## Links
 
-- Live: <https://our-backend.mhaidarhanif.com>
+- Live:
+  - <https://our-backend.mhaidarhanif.com>
+  - <https://our-backend.up.railway.app>
 - Images:
   - <https://hub.docker.com/r/mhaidarh/our-backend>
   - <https://asia-southeast2-docker.pkg.dev/project-name-123/docker/our-backend>
