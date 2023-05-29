@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "archsense.architecture-view-nestjs",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "prisma.prisma"
+  ]
+}
