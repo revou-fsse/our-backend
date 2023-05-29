@@ -1,4 +1,4 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
   IsNotEmpty,
@@ -6,29 +6,29 @@ import {
   IsString,
   MaxLength,
   MinLength,
-} from "class-validator";
+} from 'class-validator';
 
-export class CreateArticleDto {
+export class CreateTodoDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(3)
-  @ApiProperty({ default: "Example title" })
+  @ApiProperty({ default: 'Example title' })
   title: string;
 
   @IsString()
   @IsOptional()
   @IsNotEmpty()
   @MaxLength(300)
-  @ApiProperty({ required: false, default: "Example description" })
+  @ApiProperty({ required: false, default: 'Example description' })
   description?: string;
 
   @IsString()
   @IsNotEmpty()
-  @ApiProperty({ default: "Example body for longer content..." })
+  @ApiProperty({ default: 'Example body for longer content...' })
   body: string;
 
   @IsBoolean()
   @IsOptional()
   @ApiProperty({ required: false, default: false })
-  published?: boolean;
+  completed?: boolean;
 }

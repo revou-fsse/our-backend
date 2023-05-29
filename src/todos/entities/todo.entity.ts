@@ -1,9 +1,9 @@
-import { Article } from "@prisma/client";
-import { ApiProperty } from "@nestjs/swagger";
+import { Todo } from '@prisma/client';
+import { ApiProperty } from '@nestjs/swagger';
 
-import { UserEntity } from "src/users/entities/user.entity";
+import { UserEntity } from 'src/users/entities/user.entity';
 
-export class ArticleEntity implements Article {
+export class TodoEntity implements Todo {
   @ApiProperty()
   id: string;
 
@@ -20,10 +20,10 @@ export class ArticleEntity implements Article {
   body: string;
 
   @ApiProperty()
-  published: boolean;
+  completed: boolean;
 
   @ApiProperty({ required: false, nullable: true })
-  publishedAt: Date | null;
+  completedAt: Date | null;
 
   @ApiProperty()
   createdAt: Date;
@@ -40,7 +40,7 @@ export class ArticleEntity implements Article {
   @ApiProperty({ required: false, type: UserEntity })
   author?: UserEntity;
 
-  constructor({ author, ...data }: Partial<ArticleEntity>) {
+  constructor({ author, ...data }: Partial<TodoEntity>) {
     Object.assign(this, data);
 
     if (author) {
@@ -49,12 +49,12 @@ export class ArticleEntity implements Article {
   }
 }
 
-export class ArticleIDEntity {
+export class TodoIDEntity {
   @ApiProperty()
   id: string;
 }
 
-export class ArticleCountEntity {
+export class TodoCountEntity {
   @ApiProperty()
   count: number;
 }

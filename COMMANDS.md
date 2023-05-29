@@ -31,13 +31,13 @@ nest generate service prisma
 ni @nestjs/swagger swagger-ui-express
 ```
 
-## Implement CRUD operations for Article model
+## Implement CRUD operations for Todo model
 
 ### Generate REST resources
 
 ```sh
 nest generate resource
-# articles
+# todos
 ```
 
 Implement the resource in controller (endpoint) and service (database)

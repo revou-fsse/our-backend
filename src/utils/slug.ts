@@ -1,5 +1,5 @@
-import slugify from "slugify";
-import { nanoid } from "nanoid";
+import slugify from 'slugify';
+import { nanoid } from 'nanoid';
 
 export function createSlug(text: string) {
   return slugify(text, {
@@ -9,6 +9,6 @@ export function createSlug(text: string) {
   });
 }
 
-export function createArticleSlug(title: string) {
-  return createSlug(title + "-" + nanoid());
+export function createTodoSlug(title: string) {
+  return createSlug(title + '-' + nanoid());
 }
